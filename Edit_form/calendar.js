@@ -1,3 +1,5 @@
+let calendar_src = "https://calendar.google.com/calendar/embed?";
+
 function visualize_calendar(){
     let form = document.getElementById("Calendar");
     let display = form.style.display;
@@ -14,13 +16,40 @@ function visualize_calendar(){
 function set_calendar(form){
     let calendar = document.createElement("iframe");
     calendar.setAttribute("id", "calendar");
-    calendar.setAttribute("src", "https://calendar.google.com/calendar/embed");
+    calendar.setAttribute("src", calendar_src);
     calendar.style.width = "80%";
     calendar.style.height = "300px";
     form.appendChild(calendar);
+
+    let src_box = document.createElement("input");
+    src_box.setAttribute("id", "src_box");
+    src_box.style.width = "80%";
+    src_box.value = calendar_src;
+    form.appendChild(src_box);
+
+    let update_cal = document.createElement("button");
+    update_cal.setAttribute("id", "update_cal");
+    update_cal.innerHTML = "Update";
+    update_cal.setAttribute("onclick", "update_calendar_src()");
+    form.appendChild(update_cal);
 }
 
 function reset_calendar(form){
     let calendar = document.getElementById("calendar");
     form.removeChild(calendar);
+
+    let src_box = document.getElementById("src_box");
+    form.removeChild(src_box);
+
+    let update_cal = document.getElementById("update_cal");
+    form.removeChild(update_cal);
+}
+
+function update_calendar_src(){
+    let src_box = document.getElementById("src_box");
+    let source = src_box.value;
+
+    calendar_src = source;
+    let calendar = document.getElementById("calendar");
+    calendar.setAttribute("src", calendar_src);
 }
