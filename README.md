@@ -2,14 +2,15 @@
 A dashboard as an online to-do list
 
 - Add and delete tasks:
-  1. Click the "Create New Task"
+  1. Click "Create New Task"
   2. CREATE TASK: Enter the information and click "SUBMIT"
   3. DELETE TASK: Entering the task name and click "DELETE"
  
 - Google Calendar:
-  1. Allow the cookies and SIGN IN Google account
-  2. Replace the source link with your own one
-  3. Click "Update"
+  1. Click "Calendar"
+  2. Allow the cookies and SIGN IN Google account
+  3. Replace the source link with your own one
+  4. Click "Update"
 
 Future Updates (trying):
 
