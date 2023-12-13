@@ -8,19 +8,19 @@
     </ul>
     <div class = "clock_item"><span id = "clock" style = "font-size: 100px; line-height: 100%; margin: 0px;">ClockNotShown</span></div>
     <div class = "whole_page">
-        <div class = "main">
+        <div class = "main" id="main">
             <h1 id = "title"></h1>
             <h3>Tasks :</h3>
             <ol id = "list"></ol>
         </div>
-        <div class = "edit_form" id = "EditForm" style = "display: none; margin-top: 20px;">
-            <h3>Edit Form</h3>
+        <div class = "edit_form" id = "EditForm" style = "display: none;">
+            <h3 style="line-height: 0%">Edit Form</h3>
             <div>
                 <span>Latest Action :</span>
                 <span id = "result"></span>
             </div>
         </div>
-        <div class = "calendar" id = "Calendar" style = "display: none; margin-top: 40px;"></div>
+        <div class = "calendar" id = "Calendar" style = "display: none;"></div>
     </div>
     </div>
     <head>
@@ -28,5 +28,6 @@
         <script src="./Edit_form/control_edit_form.js"></script>
         <script src="./Edit_form/calendar.js"></script>
         <script src="./Edit_form/load_page.js"></script>
+        <script src="./main_page/export.js"></script>
     </head>
 </html>
