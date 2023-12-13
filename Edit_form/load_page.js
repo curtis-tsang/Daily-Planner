@@ -6,7 +6,9 @@ let div = document.querySelector("div").style;
 div.backgroundColor = "rgba(150,250,150,0.5)";
 div.margin = "5px";
 div.padding = "5px";
-div.border = "3px solid rgba(55,55,55,0.8)";
+div.border = "1px solid rgba(55,55,55,0.8)";
+div.borderRadius = "15px";
+div.boxShadow = "-2px -2px 4px 4px rgba(80,80,80, 0.6)";
 
 function add_buffer(digit){
     if(digit < 10) digit = "0" + digit;
