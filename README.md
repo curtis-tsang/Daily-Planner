@@ -1,6 +1,8 @@
 # Daily-Planner https://curtis-tsang.github.io/Daily-Planner/
 A dashboard as an online to-do list
+
 =========================================================================================
+
 Functionality:
 
 - Add and delete tasks:
@@ -15,6 +17,7 @@ Functionality:
   4. Click "Update"
      
 =========================================================================================
+
 Latest Release:
 
 - UI Improvement
@@ -26,6 +29,7 @@ Latest Release:
   - Fixed the size of calendar
     
 =========================================================================================
+
 Future Updates (trying):
 
 1. Facilitates deletion
@@ -35,4 +39,5 @@ Future Updates (trying):
 2. Progress save (locally)
    - export and save in .txt file in a given location?
    - read and restore progress by upload the .txt again?
+     
 =========================================================================================
