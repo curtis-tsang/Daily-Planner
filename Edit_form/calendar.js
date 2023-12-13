@@ -17,8 +17,13 @@ function set_calendar(form){
     let calendar = document.createElement("iframe");
     calendar.setAttribute("id", "calendar");
     calendar.setAttribute("src", calendar_src);
-    calendar.style.width = "80%";
-    calendar.style.height = "300px";
+
+    let main_list = document.getElementById("main");
+    if(parseInt(getComputedStyle(main_list).height) < 500){
+        calendar.style.height = "450px";
+    }
+    else{calendar.style.height = "90%";}
+    calendar.style.width = "100%";
     form.appendChild(calendar);
 
     let src_box = document.createElement("input");
@@ -30,6 +35,9 @@ function set_calendar(form){
     let update_cal = document.createElement("button");
     update_cal.setAttribute("id", "update_cal");
     update_cal.innerHTML = "Update";
+    update_cal.style.marginTop = "0";
+    update_cal.style.width = "18%";
+    update_cal.style.height = "30px";
     update_cal.setAttribute("onclick", "update_calendar_src()");
     form.appendChild(update_cal);
 }
@@ -53,3 +61,5 @@ function update_calendar_src(){
     let calendar = document.getElementById("calendar");
     calendar.setAttribute("src", calendar_src);
 }
+
+//https://calendar.google.com/calendar/embed?src=b07b2628b0a2f201834238bd5732bac953975ea79c69612a8dbce1fc73e7c943%40group.calendar.google.com&ctz=Asia%2FHong_Kong
