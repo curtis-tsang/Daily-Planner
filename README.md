@@ -1,5 +1,7 @@
-# Daily-Planner
+# Daily-Planner https://curtis-tsang.github.io/Daily-Planner/
 A dashboard as an online to-do list
+=========================================================================================
+Functionality:
 
 - Add and delete tasks:
   1. Click "Create New Task"
@@ -11,7 +13,19 @@ A dashboard as an online to-do list
   2. Allow the cookies and SIGN IN Google account
   3. Replace the source link with your own one
   4. Click "Update"
+     
+=========================================================================================
+Latest Release:
 
+- UI Improvement
+  - Uniform styling and element design
+  - Box-shadowing upon hovering
+ 
+- Bug Fixing:
+  - Fixed the area of to-do list
+  - Fixed the size of calendar
+    
+=========================================================================================
 Future Updates (trying):
 
 1. Facilitates deletion
@@ -21,3 +35,4 @@ Future Updates (trying):
 2. Progress save (locally)
    - export and save in .txt file in a given location?
    - read and restore progress by upload the .txt again?
+=========================================================================================
