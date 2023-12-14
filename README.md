@@ -8,7 +8,7 @@ Functionality:
 - Add and delete tasks:
   1. Click "Create New Task"
   2. CREATE TASK: Enter the information and click "SUBMIT"
-  3. DELETE TASK: Entering the task name and click "DELETE"
+  3. DELETE TASK: Mouseover the task and click the "BIN" icon
  
 - Google Calendar:
   1. Click "Calendar"
@@ -18,22 +18,17 @@ Functionality:
      
 ====================================================================================
 
-Latest Release:
+Latest Release (14 Dec 2023):
 
-- UI Improvement
-  - Uniform styling and element design
-  - Box-shadowing upon hovering
- 
-- Bug Fixing:
-  - Fixed the area of to-do list
-  - Fixed the size of calendar
+- UX Improvement:
+  - Replace "enter task name" with "click bin icon" for task deletion
+  - Fix input type of "Date"
     
 ====================================================================================
 
 Future Updates (trying):
 
 1. Facilitates deletion
-   - hover and allow deletion
    - click and edit
 
 2. Progress save (locally)
