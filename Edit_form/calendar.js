@@ -61,5 +61,3 @@ function update_calendar_src(){
     let calendar = document.getElementById("calendar");
     calendar.setAttribute("src", calendar_src);
 }
-
-//https://calendar.google.com/calendar/embed?src=b07b2628b0a2f201834238bd5732bac953975ea79c69612a8dbce1fc73e7c943%40group.calendar.google.com&ctz=Asia%2FHong_Kong
