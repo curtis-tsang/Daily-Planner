@@ -1,6 +1,6 @@
 const blank_name = ["Name", "Date", "Time", "Venue", "Remarks"];
 
-function visualize_edit_form(signal){
+function visualize_edit_form(){
     let form = document.getElementById("EditForm");
     let display = form.style.display;
     if(display === "" || display === "initial"){
@@ -15,10 +15,6 @@ function visualize_edit_form(signal){
 
 function set_edit_form(form){
 
-    create_input("delete_box", form);
-    create_new_line("delete_box", form);
-    create_button("delete_button", "DELETE", "click_del()", form);
-
     create_text("h3", "Create new event:", "heading", form);
     for(let i=0; i<blank_name.length; i++){
         create_text("span", blank_name[i], blank_name[i].concat("title"), form);
@@ -31,10 +27,6 @@ function set_edit_form(form){
 }
 
 function reset_edit_form(form){
-
-    delete_input("delete_box", form);
-    delete_new_line("delete_box", form);
-    delete_button("delete_button", form);
     delete_text("heading", form);
 
     for(let i=0; i<blank_name.length; i++){
@@ -77,6 +69,11 @@ function delete_button(getID ,form){
 function create_input(setID, form){
     let input = document.createElement("input");
     input.setAttribute("id", setID);
+    if(setID === "Date"){
+        input.setAttribute("type", "date");
+        let today = new Date().toJSON().slice(0,10);
+        input.setAttribute("value", today);
+    }
     form.appendChild(input);
 }
 
@@ -106,6 +103,8 @@ function create_event(arr){
     let item = document.createElement("li");                //create a listed item in ordered list
     item.setAttribute("id", arr[0].concat("_ID"));
     item.setAttribute("class", "task_item");
+    item.setAttribute("onmouseover", "del_icon_on(this.id)");
+    item.setAttribute("onmouseout", "del_icon_off(this.id)");
     
     create_text("h2", arr[0], arr[0].concat("_node"), item);
     for(let i=1; i<arr.length; i++){
@@ -114,7 +113,13 @@ function create_event(arr){
         child_node.style.lineHeight = "0.5";
         item.appendChild(child_node);
     }
-
+    let del_icon = document.createElement("button");
+    del_icon.setAttribute("id", arr[0].concat("_del_icon"));
+    del_icon.setAttribute("onclick", "del_item(this.id)");
+    del_icon.innerHTML = "&#x1F5D1;";
+    del_icon.style.display = "none";
+    item.appendChild(del_icon);
+    
     let list = document.getElementById("list");
     list.appendChild(item);
 }
@@ -131,10 +136,13 @@ function click_submit(){
             arr.length += 1;
             arr[arr.length-1] = response;
         }
-        document.getElementById(blank_name[i]).value = "";
+        if(blank_name[i] === "Date"){
+            let today = new Date().toJSON().slice(0,10);
+            document.getElementById(blank_name[i]).value = today;
+        }
+        else{document.getElementById(blank_name[i]).value = "";}
     }
     create_event(arr);
-    document.getElementById("result").innerHTML = "submission received";
 }
 
 function delete_item(response){
@@ -143,9 +151,24 @@ function delete_item(response){
     list.removeChild(x);
 }
 
-function click_del(){
-    response = document.getElementById("delete_box").value;
-    delete_item(response);
-    document.getElementById("result").innerHTML = "Deletion finished";
-    document.getElementById("delete_box").value = "";
+function del_item(id){
+    id = id.substr(0, id.length-9);
+    id = id.concat("_ID");
+    let del_item = document.getElementById(id);
+    let form = document.getElementById("list");
+    form.removeChild(del_item);
+}
+
+function del_icon_on(id){
+    id = id.substr(0, id.length-3);
+    id = id.concat("_del_icon");
+    let del_icon = document.getElementById(id);
+    del_icon.style.display = "initial";
+}
+
+function del_icon_off(id){
+    id = id.substr(0, id.length-3);
+    id = id.concat("_del_icon");
+    let del_icon = document.getElementById(id);
+    del_icon.style.display = "none";
 }
