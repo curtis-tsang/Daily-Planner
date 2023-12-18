@@ -1,5 +1,6 @@
 document.getElementById("title").innerHTML = "To-do List";
 
+let panel = [0];    // **edit form is excluded 1: calendar    2: to be cont'
 
 //style of div
 let div = document.querySelector("div").style;
@@ -26,4 +27,12 @@ function start_time(){
     let clock = document.getElementById("clock");
     clock.innerHTML = h + ":" + m + ":" + s;
     setTimeout(start_time, 1000);
+}
+
+function panel_command(index){
+    for(let i=0; i<panel.length; i++){
+        panel[i] = 0;
+    }
+    panel[index] = 1;
+    control_calendar(panel[0]);
 }
