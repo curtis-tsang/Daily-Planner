@@ -1,15 +1,20 @@
 let calendar_src = "https://calendar.google.com/calendar/embed?";
 
-function visualize_calendar(){
+function control_calendar(signal){
     let form = document.getElementById("Calendar");
-    let display = form.style.display;
-    if(display === "" || display === "initial"){
-        form.style.display = "none";
-        reset_calendar(form);
+    if(signal){
+        if(form.style.display === "none"){
+            set_calendar(form);
+            form.style.display = "initial";
+        }
+        else if(form.style.display === "initial" || form.style.display === ""){
+            reset_calendar(form);
+            form.style.display = "none";
+        }
     }
     else{
-        form.style.display = "initial";
-        set_calendar(form);
+        if(form.style.display === "initial" || form.style.display === "") reset_calendar(form);
+        form.style.display = "none";
     }
 }
 
