@@ -1,5 +1,7 @@
 const blank_name = ["Name", "Date", "Time", "Venue", "Remarks"];
 
+let task_name_list = []; //store all task name for checking duplicate names
+
 function visualize_edit_form(){
     let form = document.getElementById("EditForm");
     let display = form.style.display;
@@ -74,6 +76,9 @@ function create_input(setID, form){
         let today = new Date().toJSON().slice(0,10);
         input.setAttribute("value", today);
     }
+    if(setID === "Time"){
+        input.setAttribute("type", "time");
+    }
     form.appendChild(input);
 }
 
@@ -100,6 +105,13 @@ function delete_new_line(getID, form){
 //load the page
 
 function create_event(arr){
+    for(let i=0; i<task_name_list.length; i++){
+        if(arr[0] === task_name_list[i]){
+            window.alert("Tasks with duplicated names are not allowed !");
+            return;
+        }
+    }
+
     let item = document.createElement("li");                //create a listed item in ordered list
     item.setAttribute("id", arr[0].concat("_ID"));
     item.setAttribute("class", "task_item");
@@ -110,7 +122,9 @@ function create_event(arr){
     for(let i=1; i<arr.length; i++){
         let child_node = document.createElement("p");
         child_node.textContent = blank_name[i].concat(" : ", arr[i]);
-        child_node.style.lineHeight = "0.5";
+        child_node.style.lineHeight = "100%";
+        child_node.style.padding = "2px";
+        child_node.style.margin = "0px";
         item.appendChild(child_node);
     }
     let del_icon = document.createElement("button");
@@ -122,6 +136,7 @@ function create_event(arr){
     
     let list = document.getElementById("list");
     list.appendChild(item);
+    task_name_list.push(arr[0]);
 }
 
 function click_submit(){
@@ -153,6 +168,7 @@ function delete_item(response){
 
 function del_item(id){
     id = id.substr(0, id.length-9);
+    task_name_list = task_name_list.filter(function(element){ return element!=id; });
     id = id.concat("_ID");
     let del_item = document.getElementById(id);
     let form = document.getElementById("list");
