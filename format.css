@@ -1,5 +1,5 @@
 .edit_form{
-    width: 300px;
+    width: 25%;
     position: relative;
     height: 500px;
     overflow: scroll;
@@ -11,7 +11,7 @@
 }
 
 .calendar{
-    width: 600px;
+    width: 75%;
     position: relative;
     background: rgba(170, 255, 210,0.3);
     border: 1px solid rgb(0, 0, 0);
@@ -21,7 +21,7 @@
 }
 
 .main{
-    width: 600px;
+    width: 25%;
     height: 500px;
     overflow: scroll;
     position: relative;
@@ -36,9 +36,10 @@
     display: flex;
     position: relative;
     height: 100%;
-    width: 100%;
+    width: 100% - 40px;
     overflow-x: scroll;
     overflow-y: scroll;
+    padding-left: 40px;
 }
 
 .nav_bar_block{ 
@@ -55,6 +56,8 @@ ul{
     border: 1px solid rgb(0, 0, 0);
     border-radius: 10px;
     list-style-type: none;
+    width: 70%;
+    height: 80px;
 }
 
 ul:hover{
@@ -65,12 +68,14 @@ ul:hover{
     border-radius: 10px;
     box-shadow: 1px 1px 2px 2px rgba(60,80,60, 0.6);
     list-style-type: none;
+    width: 70%;
 }
 
 .nav_bar_button{
     border: 0ch;
-    font-size: 20px;
+    font-size: 25px;
     background: none;
+    height: 100%;
 }
 
 .normal_button{
@@ -85,6 +90,7 @@ ul:hover{
     border-radius: 5px;
     margin: 20px;
     padding: 10px;
+    overflow-x: scroll;
 }
 
 .task_item:hover{
@@ -99,10 +105,11 @@ ul:hover{
 .clock_item{
     background-color: rgba(170, 255, 210);
     border: 1px solid rgb(0,0,0);
-    border-radius: 5px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 10px;
+    border-radius: 10px;
+    margin-left: 5px;
+    width: 30%;
+    height: 80px;
+    text-align: center;
 }
 
 input{
