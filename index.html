@@ -2,26 +2,43 @@
 <html>
     <div>
     <body onload="start_time()"></body>
-    <ul id = "navbar">
-        <li class = "nav_bar_block"><button class = "nav_bar_button" onclick="visualize_edit_form()">&#x1f58a; Create New Task</button></li>
-        <li class = "nav_bar_block"><button class = "nav_bar_button" onclick="visualize_calendar()">&#x1F4C5; Calendar</button></li>
-    </ul>
-    <div class = "clock_item"><span id = "clock" style = "font-size: 100px; line-height: 100%; margin: 0px;">ClockNotShown</span></div>
+    <div style = "display: flex;">
+        <ul id = "navbar">
+            <li class = "nav_bar_block"><button class = "nav_bar_button" onclick="visualize_edit_form()">&#x1f58a;  Task</button></li>
+            <li class = "nav_bar_block"><button class = "nav_bar_button" onclick="panel_command(0)">&#x1F4C5; Calendar</button></li>
+        </ul>
+        <div class = "clock_item"><span id = "clock" style = "font-size: 60px; line-height: 130%;">ClockNotShown</span></div>
+    </div>
     <div class = "whole_page">
         <div class = "main" id="main">
             <h1 id = "title"></h1>
             <h3>Tasks :</h3>
+            <button class = "normal_button" onclick="export_txt()">Export</button>
             <ol id = "list"></ol>
         </div>
         <div class = "edit_form" id = "EditForm" style = "display: none;"></div>
         <div class = "calendar" id = "Calendar" style = "display: none;"></div>
     </div>
     </div>
+
+    <ul style="position: fixed; top:15%; left: 2px; width: 50px; height:auto; background: rgb(87, 255, 140)">
+        <li class = "nav_bar_block" style = "display:block"><button style="background:none; border: 0px; margin-top:5px; margin-left:-1px; padding-left:0px;">
+            <a href="https://github.com/curtis-tsang/Daily-Planner/tree/main"><i class="fa fa-github" style="font-size:40px; color:black;"></i></a>
+        </button></li>
+        <li class = "nav_bar_block" style = "display:block"><button style="background:none; border: 0px; margin-top:5px; margin-left:-4px; padding-left:0px;">
+            <a href="https://outlook.office.com/mail/"><i class="material-icons" style="font-size:40px; color:black;">mail</i></a>
+        </button></li>
+    </ul>
+
     <head>
         <link rel = "stylesheet" href = "./format.css">
         <script src="./Edit_form/control_edit_form.js"></script>
         <script src="./Edit_form/calendar.js"></script>
         <script src="./Edit_form/load_page.js"></script>
-        <script src="./main_page/export.js"></script>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
 </html>
